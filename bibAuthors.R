@@ -1,6 +1,6 @@
 # --- 
 # title: "bibAuthors" 
-# author: "Alfredo Ascanio" 
+# author: "Alfredo Ascanio [cre]" 
 # date: "08/06/2015"
 # e-mail: "11-10060@usb.ve"
 # --- 
