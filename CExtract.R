@@ -1,5 +1,5 @@
  # --- 
- # title: "bibAuthors" 
+ # title: "CExtract" 
  # author: "Alfredo Ascanio [cre]" "Mario González-Gil [ctb]"
  # date: "08/06/2015"
  # e-mail: "11-10060@usb.ve"
