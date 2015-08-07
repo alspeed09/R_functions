@@ -1,3 +1,10 @@
+ # --- 
+ # title: "bibAuthors" 
+ # author: "Alfredo Ascanio [cre]" "Mario González-Gil [ctb]"
+ # date: "08/06/2015"
+ # e-mail: "11-10060@usb.ve"
+ # --- 
+
 CExtract <- function(x, k) {
         
         ##Donde 'x' es una matriz de palabras y 'k' es un vector de palabras a extraer
