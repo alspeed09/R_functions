@@ -5,9 +5,13 @@
 # e-mail: "11-10060@usb.ve"
 # --- 
 
-bibAuthors <- function(x) {
+bibAuthors <- function(w) {
         
-        y <- x$author
+        library(bibtex)
+        w <- w
+        file1 <- paste(w, ".bib", sep = "")
+        x <- read.bib(file =  file1)
+        y <- x$author ## x es un objeto bibtex
         a <- list()
         b <- as.character(c())
         
