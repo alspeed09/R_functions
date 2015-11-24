@@ -1,8 +1,21 @@
+# --- 
+# title: "CExtract" 
+# author: "Alfredo Ascanio [cre]" "Mario González-Gil [ctb]"
+# date: "08/06/2015"
+# e-mail: "11-10060@usb.ve"
+# --- 
+
+##Descripción: Esta función tiene el objetivo de comparar dos conjuntos de 
+##artículos científicos, en base a sus autores, año de publicación y DOI (si lo
+##tiene). De esta manera se pueden hacer búsquedas rápidas de artículos en dos
+##listas de referencias separadas sin necesidad de verificar uno a uno su presencia
+#en ambas listas.
+
 bibCompare <- function(x, y) {
 
-##Where 'x' is the test matrix containing the authors of the second set of references 
-##with their corresponding year and doi; and 'y' is a matrix which contains
-##the set of authors, years and doi from the original references.
+##Donde 'x' es la matriz de prueba conteniendo los autores del segundo conjunto
+##de referencias con su año y DOI correspondiente; y 'y' es la matriz que contiene
+##el conjutno de autores, años y DOI de las referencias originales.
 
         test2 <- c(NULL)
         
@@ -31,13 +44,11 @@ bibCompare <- function(x, y) {
         
         test2 <- test2[!is.na(test2)]
         
-        test1 <- test[-c(test2), ]
+        test1 <- x[-c(test2), ]
         
         if(is.vector(test1)) {
-                test1 <- as.matrix(test1, nrow = 1)
+                test1 <- as.matrix(test1)
+                test1 <- t(test1)
         }
         
-        test3 <- test1[, -c(ncol(test1), ncol(test1)-1)]
-        
-        test3
 }
