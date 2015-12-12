@@ -21,10 +21,11 @@ adj_to_edgelist <- function(x) {
         y <- list()
         
         for (i in 1:nrow(x)) { 
-                w <- cbind(1:ncol(x), 1:ncol(x), 1:ncol(x))
+                w <- cbind(1:ncol(x), 1:ncol(x))
                 w[, 1] <- rep(dimnames(x)[[1]][i], ncol(x))
                 w[, 2] <- dimnames(x)[[2]]
-                for (j in 1:ncol(x)) w[j, 3] <- x[i, j]
+                w <- as.data.frame(w)
+                for (j in 1:ncol(x)) { w[j, 3] <- x[i, j] }
                 y[[i]] <- w
         }
         
@@ -36,13 +37,10 @@ adj_to_edgelist <- function(x) {
         
         z <- do.call("rbind", y)
         
-        z <- as.data.frame(z)
-        z[, 3] <- as.numeric(z[,3])
 ## 'z' es una matriz que contiene todos los enlaces posibles. Es la unión
 ## de todos los elementos de la lista 'y' por filas.
 
         logicz <- !is.na(z[, 3])
-        head(logicz)
         z1 <- z[logicz,]
         z1
 
